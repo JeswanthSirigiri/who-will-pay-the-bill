@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Who Will Pay?</title>
+    <style>
+   table {
+    width: 100%;
+    border-collapse: collapse;
+    border: 3px inset #0000FF;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+th, td {
+    padding: 15px;
+    text-align: center;
+      border: none;
+}
+
+th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+}
+
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+tr:hover {
+    background-color: #f2f2f2;
+}
+
+/* Additional styling */
+
+table {
+    box-shadow: 0px 2px 5px rgba(0.1, 0.1, 0.1, 0.1);
+}
+
+th, td {
+    font-size: 14px;
+    color: #333;
+}
+
+th {
+    font-size: 16px;
+    color: #000;
+    background-color: #55c1db
+}
+
+tr:hover {
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.4);
+}
+         .container {
+            text-align: center;
+            margin: 20px;
+        }
+        input[type="text"] {
+    border: 1px solid #1234ff;
+    border-radius: 5px;
+    padding: 10px;
+    background-color: pink;
+    font-size: 16px;
+    color: red;
+}
+         input[type="submit"] {
+    border: 1px solid #1234ff;
+    border-radius: 5px;
+    padding: 10px;
+    background-color: yellow;
+    font-size: 16px;
+    color: black;
+}
+    </style>
+</head>
+<body>
+    <div class="container">
+    <form method="post" action="read">
+        {% csrf_token %}
+        <h2>Who Will Pay?</h2>
+        <table>
+                  <table>
+          <tr>
+              <th>first person </th>
+              <th>second person </th>
+              <th>third person </th>
+          </tr>
+          <tr>
+              <td><input type="text" name="txtno1" placeholder="choice-1"></td>
+              <td><input type="text" name="txtno2" placeholder="choice-2"></td>
+              <td><input type="text" name="txtno3" placeholder="choice-3"></td>
+          </tr>
+            </table>
+           <table>
+        <tr><td><label for="result">Result:</label>
+        <input type="text" id="result" name="result" value="{{ res }}" readonly></td>
+        <td><input type="submit" value="Who Will Pay?"></td></tr>
+           </table>
+    </form>
+</body>
+</html>
